@@ -1,6 +1,7 @@
+"use client"
+
 // pages/blog/[slug].tsx
 import React from 'react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft, ExternalLink, Tag } from 'lucide-react';
@@ -29,11 +30,7 @@ interface BlogPostProps {
 }
 
 const BlogPost: React.FC<BlogPostProps> = ({ post, allPosts }) => {
-  const router = useRouter();
 
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
 
   const relatedPosts = allPosts
     .filter(
@@ -218,9 +215,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, allPosts }) => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <Link href="/?generator=person"><Button variant="outline" size="sm" className="w-full justify-start">Person Data Generator</Button></Link>
-                      <Link href="/?generator=company"><Button variant="outline" size="sm" className="w-full justify-start">Company Data Generator</Button></Link>
-                      <Link href="/?generator=financial"><Button variant="outline" size="sm" className="w-full justify-start">Financial Data Generator</Button></Link>
+                      <Link href="/tools/name"><Button variant="outline" size="sm" className="w-full justify-start">Person Data Generator</Button></Link>
+                      <Link href="/tools/company"><Button variant="outline" size="sm" className="w-full justify-start">Company Data Generator</Button></Link>
+                      <Link href="/tools/finance"><Button variant="outline" size="sm" className="w-full justify-start">Financial Data Generator</Button></Link>
                       <Link href="/?generator=custom"><Button variant="outline" size="sm" className="w-full justify-start">Custom Generator</Button></Link>
                     </div>
                   </CardContent>
