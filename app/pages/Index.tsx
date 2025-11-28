@@ -11,14 +11,7 @@ import Footer from '../components/Footer';
 const Home: React.FC = () => {
   return (
     <>
-      <Head>
-        <link rel="canonical" href="https://fakerbox.com/" />
-        <title>Free Fake Data Generator | FakerBox</title>
-        <meta
-          name="description"
-          content="Generate realistic fake data for testing, development, and mock APIs. Create users, addresses, products instantly. Free developer tools for database seeding and prototyping."
-        />
-      </Head>
+      
 
       <div className="min-h-screen">
         <Navigation />
